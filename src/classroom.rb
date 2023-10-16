@@ -11,7 +11,7 @@ class Classrom
     student.classroom = self
   end
 
-  def has_many
+  def many?
     @students.length
   end
 end

@@ -88,7 +88,9 @@ Now that you have installed the project and its dependencies, you can start usin
 
 To run the project's tests, use the following command:
 
-rspec
+```bash
+  rspec
+```
 
 ## Deployment
 

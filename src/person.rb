@@ -1,8 +1,11 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(id, name = 'Unknown', age = 18, parent_permission: true)
+    super()
     @id = id
     @name = name
     @age = age
@@ -13,9 +16,11 @@ class Person
     of_age? || @parent_permission
   end
 
-  private
-
   def of_age?
     @age >= 18
+  end
+
+  def correct_name
+    @name
   end
 end

@@ -64,21 +64,24 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
 
-   ```bash
+  ```bash
    git clone https://github.com/alexansaa/School-Library.git
    cd your-project
+  ```
 
 2. Install dependencies using Bundler:
-   ```bash
+  ```bash
 
      gem install bundler
      bundle install
+  ```
 
 ## Usage
 
 Now that you have installed the project and its dependencies, you can start using it:
-
+```bash
     ruby index.rb
+```
 
 
 ## Run Tests

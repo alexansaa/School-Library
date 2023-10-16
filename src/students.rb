@@ -12,7 +12,7 @@ class Student < Person
     '¯\\(ツ)/¯'
   end
 
-  def set_classroom=(classroom)
+  def add_classroom=(classroom)
     classroom.add_student(self)
   end
 end

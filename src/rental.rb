@@ -6,7 +6,7 @@ class Rental
     @book = book
     @person = person
 
-    @book.add_rentalReg(self)
-    @person.add_rentalReg(self)
+    @book.add_rental_reg(self)
+    @person.add_rental_reg(self)
   end
 end

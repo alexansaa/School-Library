@@ -25,7 +25,7 @@ class Person < Nameable
     @name
   end
 
-  def add_rentalReg(rental)
+  def add_rental_reg(rental)
     @rentals << rental
   end
 end

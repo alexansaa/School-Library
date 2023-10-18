@@ -9,4 +9,8 @@ class Rental
     @book.add_rental_reg(self)
     @person.add_rental_reg(self)
   end
+
+  def description
+    "Date: #{date}, Book \"#{book.title}\" by #{book.author}"
+  end
 end

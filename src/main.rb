@@ -22,27 +22,46 @@ def main
     when 2
       app.list_all_people
     when 3
-      print "Enter person type (teacher or student): "
+      print "Do you want to create a student (1) or a techer (2)? [Input the number]:"
       type = gets.chomp
-      print "Enter person name: "
+
+      print "Age: "
+      age = gets.chomp
+
+      print "Name: "
       name = gets.chomp
-      app.create_person(type, name)
+
+      permission = false
+
+      if type == 1      # student
+        print "Has parent permission? [Y/N]: "
+        permission = gets.chomp
+        permission = permission.capitals
+        if permission == 'Y'
+          permission = true
+        elsif permission == 'N'
+          permission = false
+
+      elsif type == 2   # teacher
+        permission = true
+
+        print "Specialization: "
+        specialization = gets.chomp
+      else
+        puts 'there is not a type for this choise'
+      end
+      
+      app.create_person(type, specialization, age, name, permission)
     when 4
-      print "Enter book title: "
+      print "Title: "
       title = gets.chomp
-      print "Enter book author: "
+      print "Author: "
       author = gets.chomp
       app.create_book(title, author)
     when 5
-      print "Enter book ID: "
-      book_id = gets.chomp.to_i
-      print "Enter person ID: "
-      person_id = gets.chomp.to_i
-      app.create_rental(book_id, person_id)
+      app.create_rental
     when 6
-      print "Enter person ID: "
-      person_id = gets.chomp.to_i
-      app.list_rentals_for_person(person_id)
+      app.list_rentals_for_person
     when 7
       puts "Exiting the application. Goodbye!"
       break

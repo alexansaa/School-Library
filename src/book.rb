@@ -12,6 +12,6 @@ class Book
   end
 
   def description
-    return "Title: #{self.title}, Author: #{self.author}"
+    "Title: #{title}, Author: #{author}"
   end
 end

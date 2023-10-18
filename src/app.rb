@@ -12,7 +12,7 @@ class LibraryApp
   end
 
   def list_all_books
-    if @books.length > 0
+    if !@books.empty?
       @books.each_with_index do |book, idx|
         puts "#{idx}) #{book.description}"
       end
@@ -20,7 +20,7 @@ class LibraryApp
   end
 
   def list_all_people
-    if @people.length > 0
+    if !@people.empty?
       @people.each_with_index do |some, idx|
         puts "#{idx}) #{some.description}"
       end
@@ -28,22 +28,22 @@ class LibraryApp
   end
 
   def create_person(type, specialization, age, name, permission)
-    if type == '1'      # student
-      newPerson = Student.new(SecureRandom.uuid, nil, name, age, parent_permission: permission)
-    elsif type == '2'   # teacher
-      newPerson = Teacher.new(SecureRandom.uuid, specialization, name, age)
+    if type == '1'# student
+      new_person = Student.new(SecureRandom.uuid, nil, name, age, parent_permission: permission)
+    elsif type == '2'# teacher
+      new_person = Teacher.new(SecureRandom.uuid, specialization, name, age)
     else
       puts 'Error in person creation'
     end
-    puts newPerson.name
-    @people << newPerson
+    puts new_person.name
+    @people << new_person
 
     puts 'Person created successfully'
   end
 
   def create_book(title, author)
-    newBook = Book.new(title, author)
-    @books << newBook
+    new_book = Book.new(title, author)
+    @books << new_book
 
     puts 'Book created successfully'
   end
@@ -52,34 +52,32 @@ class LibraryApp
     puts 'Select a book from the following list by number'
     list_all_books
     input = gets.chomp
-    slctBook = @books[input.to_i]
+    slct_book = @books[input.to_i]
 
     puts 'Select a person from the following list by number (not id)'
     list_all_people
     input = gets.chomp
-    slctPeople = @people[input.to_i]
+    slct_people = @people[input.to_i]
 
     puts 'Date: '
     date = gets.chomp
 
-    tmpRental = Rental.new(date, slctBook, slctPeople)
+    tmp_rental = Rental.new(date, slct_book, slct_people)
 
-    @rentals << tmpRental
+    @rentals << tmp_rental
 
     puts 'Rental created successfully'
-
   end
 
   def list_rentals_for_person
     puts 'ID of person: '
-    idPerson = gets.chomp
+    id_person = gets.chomp
     puts 'Rentals: '
 
     @rentals.each do |rent|
-      if rent.person.id == idPerson
+      if rent.person.id == id_person
         puts rent.description
       end
     end
   end
 end
-  

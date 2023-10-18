@@ -11,6 +11,6 @@ class Rental
   end
 
   def description
-    return "Date: #{self.date}, Book \"#{self.book.title}\" by #{self.book.author}"
+    "Date: #{date}, Book \"#{book.title}\" by #{book.author}"
   end
 end

@@ -17,6 +17,6 @@ class Student < Person
   end
 
   def description
-    return "[Student] Name: #{self.name}, ID: #{self.id}, Age: #{self.age}"
+    "[Student] Name: #{name}, ID: #{id}, Age: #{age}"
   end
 end

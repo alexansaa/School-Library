@@ -50,9 +50,7 @@ end
 def main_menu
   loop do
     display_menu
-
     choice = get_integer_input('Enter your choice: ')
-
     case choice
     when 1
       @app.list_all_books
@@ -70,7 +68,6 @@ def main_menu
       puts 'Exiting the application. Goodbye!'
       break
     else
-      puts 'Invalid choice. Please try again.'
     end
   end
 end

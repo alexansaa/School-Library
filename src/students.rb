@@ -4,7 +4,7 @@ class Student < Person
   attr_reader :classroom
 
   def initialize(id, classroom = nil, name = 'Unknown', age = 18, parent_permission: false)
-    super(id, name, age, parent_permission)
+    super(id, name, age, parent_permission: parent_permission)
     @classroom = classroom
   end
 
@@ -14,5 +14,9 @@ class Student < Person
 
   def add_classroom=(classroom)
     classroom.add_student(self)
+  end
+
+  def description
+    return "[Student] Name: #{self.name}, ID: #{self.id}, Age: #{self.age}"
   end
 end

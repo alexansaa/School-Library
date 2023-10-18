@@ -22,7 +22,7 @@ def main
     when 2
       app.list_all_people
     when 3
-      print "Do you want to create a student (1) or a techer (2)? [Input the number]:"
+      print "Do you want to create a student (1) or a techer (2)? [Input the number]: "
       type = gets.chomp
 
       print "Age: "
@@ -33,16 +33,16 @@ def main
 
       permission = false
 
-      if type == 1      # student
+      if type == '1'      # student
         print "Has parent permission? [Y/N]: "
         permission = gets.chomp
-        permission = permission.capitals
+        permission = permission.upcase
         if permission == 'Y'
           permission = true
         elsif permission == 'N'
           permission = false
-
-      elsif type == 2   # teacher
+        end
+      elsif type == '2'   # teacher
         permission = true
 
         print "Specialization: "

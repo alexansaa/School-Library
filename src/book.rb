@@ -10,4 +10,8 @@ class Book
   def add_rental_reg(rental)
     @rentals << rental
   end
+
+  def description
+    return "Title: #{self.title}, Author: #{self.author}"
+  end
 end

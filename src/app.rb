@@ -13,7 +13,7 @@ class LibraryApp
 
   def list_all_books
     return if @books.empty?
-    
+
     @books.each_with_index do |book, idx|
       puts "#{idx}) #{book.description}"
     end

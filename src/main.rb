@@ -47,29 +47,24 @@ def create_book_menu
   @app.create_book(title, author)
 end
 
-def main_menu
-  loop do
-    display_menu
-    choice = get_integer_input('Enter your choice: ')
-    case choice
-    when 1
-      @app.list_all_books
-    when 2
-      @app.list_all_people
-    when 3
-      create_person_menu
-    when 4
-      create_book_menu
-    when 5
-      @app.create_rental
-    when 6
-      @app.list_rentals_for_person
-    when 7
-      puts 'Exiting the application. Goodbye!'
-      break
-    else
-    end
+loop do
+  display_menu
+  choice = get_integer_input('Enter your choice: ')
+  case choice
+  when 1
+    @app.list_all_books
+  when 2
+    @app.list_all_people
+  when 3
+    create_person_menu
+  when 4
+    create_book_menu
+  when 5
+    @app.create_rental
+  when 6
+    @app.list_rentals_for_person
+  when 7
+    puts 'Exiting the application. Goodbye!'
+    break
   end
 end
-
-main_menu

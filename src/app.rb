@@ -12,7 +12,7 @@ class LibraryApp
   end
 
   def list_all_books
-    if !@books.empty?
+    unless @books.empty?
       @books.each_with_index do |book, idx|
         puts "#{idx}) #{book.description}"
       end
@@ -20,7 +20,7 @@ class LibraryApp
   end
 
   def list_all_people
-    if !@people.empty?
+    unless @people.empty?
       @people.each_with_index do |some, idx|
         puts "#{idx}) #{some.description}"
       end
@@ -28,9 +28,9 @@ class LibraryApp
   end
 
   def create_person(type, specialization, age, name, permission)
-    if type == '1'# student
+    if type == '1' # student
       new_person = Student.new(SecureRandom.uuid, nil, name, age, parent_permission: permission)
-    elsif type == '2'# teacher
+    elsif type == '2' # teacher
       new_person = Teacher.new(SecureRandom.uuid, specialization, name, age)
     else
       puts 'Error in person creation'
@@ -75,9 +75,7 @@ class LibraryApp
     puts 'Rentals: '
 
     @rentals.each do |rent|
-      if rent.person.id == id_person
-        puts rent.description
-      end
+      puts rent.description if rent.person.id == id_person
     end
   end
 end

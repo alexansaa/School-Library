@@ -33,7 +33,7 @@ def main
 
       permission = false
 
-      if type == '1'# student
+      if type == '1' # student
         print 'Has parent permission? [Y/N]: '
         permission = gets.chomp
         permission = permission.upcase
@@ -42,7 +42,7 @@ def main
         elsif permission == 'N'
           permission = false
         end
-      elsif type == '2'# teacher
+      elsif type == '2' # teacher
         permission = true
 
         print 'Specialization: '

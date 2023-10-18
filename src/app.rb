@@ -12,19 +12,17 @@ class LibraryApp
   end
 
   def list_all_books
-    unless @books.empty?
+    return if @books.empty?
       @books.each_with_index do |book, idx|
         puts "#{idx}) #{book.description}"
       end
-    end
   end
 
   def list_all_people
-    unless @people.empty?
+    return if @people.empty?
       @people.each_with_index do |some, idx|
         puts "#{idx}) #{some.description}"
       end
-    end
   end
 
   def create_person(type, specialization, age, name, permission)
